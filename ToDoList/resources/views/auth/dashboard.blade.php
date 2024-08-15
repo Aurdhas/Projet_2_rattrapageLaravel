@@ -9,7 +9,8 @@
     <title>Document</title>
 </head>
 
-<body>
+<body >
+
     <header>
         <!-- Main content -->
         <div class="flex flex-col flex-1 overflow-y-auto">
@@ -74,9 +75,9 @@
         </div>
     </header>
 
+
     <body>
         <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
-
             <div class="grid grid-cols-4 gap-4 ">
                 @foreach ($posts as $post)
                     <div class=" h-[28rem]">
