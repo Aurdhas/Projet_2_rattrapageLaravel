@@ -30,18 +30,26 @@
                     @if ($errors->has('content'))
                         <span class="text-danger">{{ $errors->first('content') }}</span>
                     @endif
-                    <div>
-                        <label for="image" class="mb-2 dark:text-gray-900">Image</label><br>
-                        @if ($post->image)
-                            <img src="{{ asset('storage/' . $post->image) }}" class="w-full mb-3">
-                        @endif
-                        <label for="image">Select a file:</label>
 
-                        <input type="file" name="image" id="image" value="{{ $post->image }}">
-                        @if ($errors->has('image'))
-                            <span class="text-danger">{{ $errors->first('image') }}</span>
-                        @endif
-                    </div>
+                    <label for="priority" class="mb-2 dark:text-gray-900">Priority</label><br>
+                    <input class="priority bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" name="priority"
+                        spellcheck="false" value="{{ $post->priority }}" type="text">
+                    @if ($errors->has('priority'))
+                        <span class="text-danger">{{ $errors->first('priority') }}</span>
+                    @endif
+                    <label for="start_date" class="mb-2 dark:text-gray-900">Start date</label><br>
+                    <input class="start_date bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" name="start_date"
+                        spellcheck="false" value="{{ $post->start_date }}" type="date">
+                    @if ($errors->has('start_date'))
+                        <span class="text-danger">{{ $errors->first('start_date') }}</span>
+                    @endif
+
+                    <label for="end_date" class="mb-2 dark:text-gray-900">End date</label><br>
+                    <input class="end_date bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" name="end_date"
+                        spellcheck="false" value="{{ $post->end_date }}" type="date">
+                    @if ($errors->has('end_date'))
+                        <span class="text-danger">{{ $errors->first('end_date') }}</span>
+                    @endif
 
                     <!-- Buttons -->
                     <div class="buttons flex justify-end">
@@ -50,6 +58,7 @@
                     </div>
                 </div>
             </form>
+            
     </div>
 
 

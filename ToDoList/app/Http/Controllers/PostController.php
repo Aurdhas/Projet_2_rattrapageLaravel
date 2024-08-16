@@ -42,16 +42,22 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            
+            'start_date'=>'required|date|before_or_equal:end_date',
+            'end_date'=>'required|date|after_or_equal:start_date',
+            'priority'=>'required',
+
         ]);
 
         $post = new Post;
 
         $post->title = $request->title;
         $post->content = $request->content;
+        $post->start_date = $request->start_date;
+        $post->end_date = $request->end_date;
+        $post->priority = $request->priority;
         $post->user_id = Auth::user()->id;
         $post->save();
-        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
+        return redirect()->route('dashboard')->with('success', 'Post created successfully.');
     }
 
     /**
@@ -81,6 +87,9 @@ class PostController extends Controller
         $post->update([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
+            'priority' => $request->input('priority'),
+            'start_date' => $request->input('start_date'),
+            'end_date' => $request->input('end_date'),
 
         ]);
         $users = User::all();

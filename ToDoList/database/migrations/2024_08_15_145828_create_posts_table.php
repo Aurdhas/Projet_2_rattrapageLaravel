@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('content');
+            $table->string('start_date');
+            $table->string('end_date');
+            $table->string('priority');
             $table->bigInteger('user_id')->unsigned()->index()->comment('author of the post');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

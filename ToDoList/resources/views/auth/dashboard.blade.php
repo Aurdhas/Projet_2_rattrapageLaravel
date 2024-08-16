@@ -9,16 +9,15 @@
     <title>Document</title>
 </head>
 
-<body >
+<body>
 
     <header>
         <!-- Main content -->
         <div class="flex flex-col flex-1 overflow-y-auto">
-            <div class="flex items-center justify-between h-16 bg-white border-b border-gray-200">
+            <div class="flex items-center justify-between h-16 bg-black border-b border-gray-200">
                 <div class="flex items-center px-4">
                     <!-- profile -->
-                    <a href="{{ URL::route('profile') }}"
-                        class="flex items-center px-4 py-2 mt-2  text-gray-600 hover:text-gray-800"
+                    <a href="{{ URL::route('profile') }}" class="flex items-center px-4 py-2 mt-2  text-white "
                         style="margin-bottom: 8px">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32"
                             style="margin-bottom: 8px">
@@ -34,9 +33,9 @@
                 <!-- notification -->
                 <div class="flex items-center space-x-4 mr-4">
 
-                    <a href="{{ route('posts.create') }}" class="btn font-bold cursor-pointer text-gray-900 ml-2">Create
+                    <a href="{{ route('posts.create') }}" class="btn font-bold cursor-pointer text-white ml-2">Create
                         a task</a>
-                    <a href="#" class="text-gray-600 hover:text-gray-800">
+                    <a href="#" class="text-white hover:text-gray-800">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M6.429 2.413a.75.75 0 0 0-1.13-.986l-1.292 1.48a4.75 4.75 0 0 0-1.17 3.024L2.78 8.65a.75.75 0 1 0 1.5.031l.056-2.718a3.25 3.25 0 0 1 .801-2.069z" />
@@ -48,14 +47,14 @@
                         </svg>
                     </a>
                     <!-- parametre -->
-                    <a href="#" class="text-gray-600 hover:text-gray-800">
+                    <a href="#" class="text-white hover:text-gray-800">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor"login
                                 d="M19.9 12.66a1 1 0 0 1 0-1.32l1.28-1.44a1 1 0 0 0 .12-1.17l-2-3.46a1 1 0 0 0-1.07-.48l-1.88.38a1 1 0 0 1-1.15-.66l-.61-1.83a1 1 0 0 0-.95-.68h-4a1 1 0 0 0-1 .68l-.56 1.83a1 1 0 0 1-1.15.66L5 4.79a1 1 0 0 0-1 .48L2 8.73a1 1 0 0 0 .1 1.17l1.27 1.44a1 1 0 0 1 0 1.32L2.1 14.1a1 1 0 0 0-.1 1.17l2 3.46a1 1 0 0 0 1.07.48l1.88-.38a1 1 0 0 1 1.15.66l.61 1.83a1 1 0 0 0 1 .68h4a1 1 0 0 0 .95-.68l.61-1.83a1 1 0 0 1 1.15-.66l1.88.38a1 1 0 0 0 1.07-.48l2-3.46a1 1 0 0 0-.12-1.17ZM18.41 14l.8.9l-1.28 2.22l-1.18-.24a3 3 0 0 0-3.45 2L12.92 20h-2.56L10 18.86a3 3 0 0 0-3.45-2l-1.18.24l-1.3-2.21l.8-.9a3 3 0 0 0 0-4l-.8-.9l1.28-2.2l1.18.24a3 3 0 0 0 3.45-2L10.36 4h2.56l.38 1.14a3 3 0 0 0 3.45 2l1.18-.24l1.28 2.22l-.8.9a3 3 0 0 0 0 3.98m-6.77-6a4 4 0 1 0 4 4a4 4 0 0 0-4-4m0 6a2 2 0 1 1 2-2a2 2 0 0 1-2 2" />
                         </svg>
                     </a>
                     <!-- logout -->
-                    <a href="{{ route('signout') }}" class="flex items-center text-gray-600 hover:text-gray-800">
+                    <a href="{{ route('signout') }}" class="flex items-center text-white hover:text-gray-800">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M5 11h8v2H5v3l-5-4l5-4zm-1 7h2.708a8 8 0 1 0 0-12H4a9.985 9.985 0 0 1 8-4c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4" />
@@ -77,50 +76,44 @@
 
 
     <body>
-        <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
-            <div class="grid grid-cols-4 gap-4 ">
-                @foreach ($posts as $post)
-                    <div class=" h-[28rem]">
-                        <div
-                            class=" border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-green-500 rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-                            <div class="p-4 pt-2 ">
-                                <div class="mb-8">
 
-                                    <p
-                                        class="text-gray-900 font-bold text-lg mb-2 hover:text-indigo-600 inline-block">{{ $post->title }}</p>
-
-                                    <p class="text-gray-700 text-sm">{{ Str::words($post->content, 5) }}</p><br>
-                                    <a href="{{ route('posts.show', $post->id) }}"
-                                        class="btn font-bold cursor-pointer text-blue-900 ml-[8rem]">Read more</a>
-                                </div>
-                                <div class="flex items-center">
-                                    <a href="#"><img class="w-10 h-10 rounded-full mr-4"
-                                            src="https://tailwindcss.com/img/jonathan.jpg"
-                                            alt="Avatar of Jonathan Reinink"></a>
-                                    <div class="text-sm">
-                                        @foreach ($users as $user)
-                                            @if ($post->user_id == $user->id)
-                                                <a href="#"
-                                                    class="text-gray-900 font-semibold leading-none hover:text-indigo-600">{{ $user->name }}</a>
-                                            @endif
-                                        @endforeach
-                                        <p class="text-gray-600">{{ $post->created_at }}</p>
-                                    </div>
-                                    <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="ml-5 text-red-900">Delete</button>
-                                    </form>
-                                    <a href="{{ route('posts.edit', $post->id) }}"
-                                        class="btn font-bold cursor-pointer text-green-900 ml-1">Edit</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                @endforeach
+        <div class="w-[50rem] mx-auto bg-slate-300 shadow-lg rounded-lg overflow-hidden mt-16">
+            <div class="px-4 py-2">
+                <h1 class="text-gray-800 font-bold text-2xl uppercase text-center">To-Do List</h1>
             </div>
+            @foreach ($posts as $post)
+                <ul class="divide-y divide-gray-200 px-4">
+                    <li class="py-4">
+                        <div class="flex items-center">
+                            <input id="todo1" name="todo1" type="checkbox"
+                                class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded">
+                            <label for="todo1" class="ml-3 block text-gray-900">
+                                <span class="text-lg font-medium">{{ Str::words($post->title, 5) }}</span><br>
+                                <span class="text-sm font-light text-red-500"> {{ $post->priority }}</span><br>
+                                <span class="text-sm font-light text-gray-500">Due on {{ $post->end_date }}</span>
+                                @foreach ($users as $user)
+                                    @if ($post->user_id == $user->id)
+                                        <a href="#"
+                                            class="text-gray-900 font-semibold leading-none hover:text-indigo-600">Created
+                                            by {{ $user->name }}</a>
+                                    @endif
+                                @endforeach
+                            </label><br>
+                            <a href="{{ route('posts.show', $post->id) }}"
+                                class="btn font-bold cursor-pointer text-blue-900 ml-[8rem]">Read more</a>
+                            <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="ml-5 text-red-900">Delete</button>
+                            </form>
+                            <a href="{{ route('posts.edit', $post->id) }}"
+                                class="btn font-bold cursor-pointer text-green-900 ml-1">Edit</a>
+                        </div>
+                    </li>
 
+
+                </ul>
+            @endforeach
         </div>
     </body>
 

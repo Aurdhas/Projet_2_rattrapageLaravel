@@ -18,7 +18,7 @@
                 <div class="w-auto h-[28rem]">
                     <div
                         class=" border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-    
+
                         <div class="p-4 pt-2">
                             <div class="mb-8">
                                 <p class="text-sm text-gray-600 flex items-center">
@@ -31,16 +31,19 @@
 
                                 </p>
                                 <a href="#"
-                                    class="text-gray-900 font-bold text-lg mb-2 hover:text-indigo-600 inline-block">{{ $post->title }}</a>
+                                    class="text-gray-900 font-bold text-lg mb-2 hover:text-indigo-600 inline-block">Title: {{ $post->title }}</a>
 
-                                <p class="text-gray-700 text-sm">{{ $post->content }}</p><br>
+                                <p class="text-gray-700 text-sm">Content: {{ $post->content }}</p><br>
+                                <p class="text-red-700 text-sm">Priority: {{ $post->priority }}</p><br>
+                                <p class="text-gray-700 text-sm">Start date: {{ $post->start_date }}</p><br>
+                                <p class="text-gray-700 text-sm">End date: {{ $post->end_date}}</p><br>
 
                             </div>
                             <div class="flex items-center">
 
                                 <div class="text-sm">
 
-                                    <p class="text-gray-600">{{ $post->created_at }}</p>
+                                    <p class="text-gray-600">Created at {{ $post->created_at }}</p>
                                 </div>
 
                                 <a href="{{ route('dashboard') }}"

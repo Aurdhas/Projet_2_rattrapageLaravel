@@ -13,7 +13,7 @@
     <section class="bg-gray-50 flex flex-col items-center justify-center py-10">
         <div class="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
             <div
-                class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center bg-gradient-to-r from-lime-700 to-yellow-500">
+                class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center bg-slate-300">
                 <!--  -->
                 <div class="text-center">
                     <h1 class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2">

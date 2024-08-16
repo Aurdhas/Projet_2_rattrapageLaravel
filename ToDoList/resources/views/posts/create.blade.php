@@ -28,7 +28,21 @@
                 @if ($errors->has('content'))
                     <span class="text-danger">{{ $errors->first('content') }}</span>
                 @endif
+                <label for="start_date">Select a start date</label>
+                <input type="date"  class="start_date bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" name="start_date"
+                spellcheck="false" >
 
+                <label for="end_date">Select an end date</label>
+                <input type="date"  class="end_date bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" name="end_date"
+                spellcheck="false"  >
+
+                <label for="priority">Select a priority</label>
+                <select name="priority" class="priority w-sm text-sm font-medium transition duration-75 border border-gray-800 rounded-lg shadow-sm h-9 focus:border-blue-600 focus:ring-1 focus:ring-inset focus:ring-blue-600 bg-none" >
+                    <option value="Important and urgent">Important and urgent</option>
+                    <option value="Important only">Important only</option>
+                    <option value="Urgent only">Urgent only</option>
+                    <option value="No important,no urgent">No important,no urgent</option>
+                  </select>
 
                 <!-- Buttons -->
                 <div class="buttons flex justify-end">
